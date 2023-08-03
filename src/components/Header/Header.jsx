@@ -7,6 +7,13 @@ import {AiOutlineHeart} from "react-icons/ai"
 import Search from './Search/Search'
 import Cart from '../Cart/Cart'
 function Header() {
+const handleScroll = () =>{
+  const offset = window.scrollY;
+};
+useEffect(() =>{
+  window.addEventListener("scroll", handleScroll);
+}, []);
+
   const [showCart, setshowCart] = useState(false);
   const [showSearch, setshowSearch] = useState(false);
   return (

@@ -23,10 +23,10 @@
     .prod-details{
         .name{
             font-size: 14px;
-            display: block;
             text-overflow: ellipsis;
-            white-space: nowrap;
-            //overflow: hidden;
+            overflow: hidden;
+            display: block;
+            word-wrap: break-word;
             @include md{
                 font-size: 16px;
                 margin-bottom: 10px;
@@ -34,6 +34,7 @@
         }
         .price{
             font-size: 18px;
+            font-weight: 600;
             @include md{
             margin-bottom: 10px;
             font-weight: 600; 

@@ -1,5 +1,5 @@
 
-import { Routes, Route } from 'react-router-dom';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import About from './components/About/About';
@@ -7,10 +7,13 @@ import Category from './components/Categorys/Categorys'
 import SingleProduct from './components/SingleProduct/SingleProduct'
 import Newsletter from './components/Footer/Newsletter/Newsletter';
 import Footer from './components/Footer/Footer';
+import AppContext  from './uitls/context';
 
 function App() {
   return (
-    <div className="App">
+    //<div className="App">
+    < BrowserRouter>
+      <AppContext>
       <Header/>
      <Routes>
       <Route path='/' element={<Home/>}/>
@@ -20,7 +23,9 @@ function App() {
      </Routes>
     <Newsletter/>
     <Footer/>
-    </div>
+    </AppContext>
+    </ BrowserRouter>
+  //  </div>
   );
 }
 
