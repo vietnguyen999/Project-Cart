@@ -10,10 +10,15 @@ const AppContext = ({ children }) => {
   const [cartSubTotal, setCartSubTotal] = useState(0);
   const location = useLocation();
 
+  useEffect(() =>{
+    window.scrollTo(0,0);
+  },[location]);
+
+
   useEffect(() => {
     let count = 0;
-    cartItems.map((item) => (count += item?.attributes?.quantity));
-    setCartCout(count);
+        cartItems?.map((item) => (count += item.attributes.quantity));
+        setCartCout(count);
 
     let subTotal = 0;
     cartItems.map(

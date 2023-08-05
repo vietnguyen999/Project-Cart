@@ -9,17 +9,20 @@ import Cart from '../Cart/Cart'
 import { Context } from '../../uitls/context'
 
 function Header() {
-  const {cartCount} = useContext(Context);
+
+  
 const handleScroll = () =>{
   const offset = window.scrollY;
 
 };
 useEffect(() =>{
   window.addEventListener("scroll", handleScroll);
+  
 }, []);
-
   const [showCart, setshowCart] = useState(false);
   const [showSearch, setshowSearch] = useState(false);
+ const {cartCout} = useContext(Context);
+  
   return (
     <>
     <div className='main-Header'>
@@ -37,7 +40,7 @@ useEffect(() =>{
            <AiOutlineHeart />
            <span className='cart-icon' onClick={() => setshowCart(true)}>
             <AiOutlineShoppingCart />
-            <span className='span-cart'>{cartCount}</span>
+            {!!cartCout && <span>{cartCout}</span>}
            </span> 
         </div>
         </div>

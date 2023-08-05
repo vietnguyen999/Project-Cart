@@ -8,7 +8,7 @@ function Cartltem() {
     useContext(Context);
   return (
     <div className="cart-products">
-      {cartItems.map((item) => (
+      {cartItems?.map((item) => (
         <div key={item.id} className="cart-product">
           <div className="img-container">
             <img src={
