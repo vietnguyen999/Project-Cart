@@ -39,10 +39,21 @@
            }
         }
         .center{
-            font-size: 22px;
             font-weight: 700;
+            list-style-type: none;       
             gap: 20px;
+            li{
+                font-size: 24px;
+                font-weight: 600;
+                text-transform: uppercase;
+                cursor: pointer;
+               }
+               a{
+                text-decoration: none;
+                color: white;
+               }
         }
+
         .right{
             display: flex;
             align-items: center;

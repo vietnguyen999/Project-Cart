@@ -1,6 +1,7 @@
 import "./Category.scss";
-
+import {useNavigate} from "react-router-dom"
 const Category = ({ categories }) => {
+    const navigate = useNavigate();
     return (
         <div className="shop-by-catecategory">
             <div className="categories">
@@ -8,7 +9,8 @@ const Category = ({ categories }) => {
                     <div
                         key={item.id}
                         className="category"
-                    >
+                            onClick={() =>navigate(`/category/${item.id}`)}
+                        >
                         <img
                             src={
                                 process.env.REACT_APP_DEV_URL +

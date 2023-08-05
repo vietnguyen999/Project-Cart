@@ -1,14 +1,18 @@
 import './Header.scss'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import {Link} from "react-router-dom"
 import {AiOutlineSearch} from "react-icons/ai"
 import {AiOutlineShoppingCart} from "react-icons/ai"
 import {AiOutlineHeart} from "react-icons/ai"
 import Search from './Search/Search'
 import Cart from '../Cart/Cart'
+import { Context } from '../../uitls/context'
+
 function Header() {
+  const {cartCount} = useContext(Context);
 const handleScroll = () =>{
   const offset = window.scrollY;
+
 };
 useEffect(() =>{
   window.addEventListener("scroll", handleScroll);
@@ -26,14 +30,14 @@ useEffect(() =>{
         <li><Link to='/category' >Category</Link></li>
         </ul>
         <div className="center">
-            VIETWIN
+         <li><Link to='/'>VIETWIN</Link></li> 
         </div>
         <div className="right">
            <AiOutlineSearch onClick={() => setshowSearch(true)}/>
            <AiOutlineHeart />
            <span className='cart-icon' onClick={() => setshowCart(true)}>
             <AiOutlineShoppingCart />
-            <span className='span-cart'>4</span>
+            <span className='span-cart'>{cartCount}</span>
            </span> 
         </div>
         </div>
